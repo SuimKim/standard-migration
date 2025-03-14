@@ -1,15 +1,7 @@
 "use client";
 import { useQuery } from "@tanstack/react-query";
 import TodoItem from "./TodoItem";
-
-type Todo = {
-  id: string;
-  title: string;
-  contents: string;
-  isCompleted: boolean;
-  imgPath: string;
-  createdAt: number;
-};
+import { Todo } from "@/app/todolist/page";
 
 const TodoList = () => {
   const {
@@ -24,7 +16,8 @@ const TodoList = () => {
         throw new Error("Failed to fetch todos");
       }
 
-      return await response.json();
+      const todos: Todo[] = await response.json();
+      return todos;
     },
   });
 

@@ -1,13 +1,6 @@
+import { Todo } from "@/app/todolist/page";
 import Image from "next/image";
 import Link from "next/link";
-type Todo = {
-  id: string;
-  title: string;
-  contents: string;
-  isCompleted: boolean;
-  imgPath: string;
-  createdAt: number;
-};
 
 const TodoItem = ({ todo }: { todo: Todo }) => {
   return (

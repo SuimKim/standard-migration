@@ -1,5 +1,6 @@
 "use client";
 
+import { Todo } from "@/app/todolist/page";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
 
@@ -9,7 +10,7 @@ const TodoForm = () => {
 
   const queryClient = useQueryClient();
   const addMutation = useMutation({
-    mutationFn: async (newTodo) => {
+    mutationFn: async (newTodo: Todo) => {
       const response = await fetch("http://localhost:4000/todos", {
         method: "POST",
         headers: {

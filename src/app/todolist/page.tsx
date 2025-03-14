@@ -1,6 +1,15 @@
 import TodoForm from "@/components/TodoForm";
 import TodoList from "@/components/TodoList";
 
+export type Todo = {
+  id: string;
+  title: string;
+  contents: string;
+  isCompleted: boolean;
+  imgPath: string;
+  createdAt: number;
+};
+
 const TodoListPage = () => {
   return (
     <div
