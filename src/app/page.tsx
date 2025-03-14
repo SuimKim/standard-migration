@@ -1,20 +1,12 @@
-"use client";
-import { useEffect, useState } from "react";
-
 type Intro = {
   [key: string]: string;
 };
 
-export default function HomePage() {
-  const [introData, setIntroData] = useState<Intro | null>(null);
-
-  useEffect(() => {
-    fetch("http://localhost:4000/intro", {
-      cache: "force-cache",
-    })
-      .then((response) => response.json())
-      .then((data) => setIntroData(data));
-  }, []);
+export default async function HomePage() {
+  const res = await fetch("http://localhost:4000/intro", {
+    cache: "force-cache",
+  });
+  const introData: Intro = await res.json();
 
   if (!introData) return <div>로딩중...</div>;
 
