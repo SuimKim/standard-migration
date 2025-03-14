@@ -6,7 +6,7 @@ type Blog = {
   content: string;
   author: string;
   category: string;
-  createdAt: number;
+  createdAt: string;
   tags: string[];
 };
 
