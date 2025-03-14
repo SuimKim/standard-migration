@@ -1,7 +1,7 @@
 import React from "react";
 
 const TodoListPage = () => {
-  return <div>TodoListPage</div>;
+  return <div>TodoList(CSR)</div>;
 };
 
 export default TodoListPage;
